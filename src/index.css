@@ -1,30 +1,46 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+ 
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 20 14.3% 4.1%;
-    --radius: 0.5rem;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.75rem;
   }
+}
 
+@layer base {
   body {
-    @apply bg-neutral-50 text-primary antialiased;
-    font-feature-settings: "ss01" on, "ss02" on, "cv01" on, "cv03" on;
+    @apply bg-dashboard-dark text-dashboard-text;
   }
 }
 
-@layer components {
-  .glass-card {
-    @apply bg-white/70 backdrop-blur-lg border border-white/20 shadow-lg;
-  }
-  
-  .container-padding {
-    @apply px-6 md:px-8 lg:px-12;
-  }
+.glass-card {
+  @apply bg-dashboard-card bg-opacity-50 backdrop-blur-lg border border-white/10 rounded-xl;
 }
 
-.text-balance {
-  text-wrap: balance;
+.dashboard-card {
+  @apply p-6 glass-card transition-all duration-300 hover:border-white/20;
+}
+
+.metric-card {
+  @apply relative flex flex-col items-center justify-center p-8 dashboard-card;
 }
